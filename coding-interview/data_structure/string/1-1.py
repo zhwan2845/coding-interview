@@ -1,6 +1,4 @@
-from typing import Boolean
-
-def is_unique_characters(s: str) -> Boolean:
+def is_unique_characters(s: str) -> bool:
     """
     Implement an algorithm to determine if a string has all unique characters.
     What if you cannot use additional data structures?

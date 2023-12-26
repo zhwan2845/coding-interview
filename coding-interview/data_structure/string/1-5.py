@@ -1,6 +1,4 @@
-from typing import Boolean
-
-def is_one_away(s1: str, s2: str) -> Boolean:
+def is_one_away(s1: str, s2: str) -> bool:
     """
     There are three types of edits that can be performed on strings: insert a
     character, remove a character, or replace a character. Given two strings,
