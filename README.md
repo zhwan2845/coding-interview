@@ -16,6 +16,15 @@
 
 ### 연결리스트
 
+- [2.1 중복 없애기](./coding-interview/data_structure/linked_list/2-1.py)
+- [2.2 뒤에서 k번째 원소 구하기](./coding-interview/data_structure/linked_list/2-2.py)
+- [2.3 중간 노드 삭제](./coding-interview/data_structure/linked_list/2-3.py)
+- [2.4 분할](./coding-interview/data_structure/linked_list/2-4.py)
+- [2.5 리스트의 합](./coding-interview/data_structure/linked_list/2-5.py)
+- [2.6 회문](./coding-interview/data_structure/linked_list/2-6.py)
+- [2.7 교집합](./coding-interview/data_structure/linked_list/2-7.py)
+- [2.8 루프 발견](./coding-interview/data_structure/linked_list/2-8.py)
+
 ### 스택과 큐
 
 ### 트리와 그래프
