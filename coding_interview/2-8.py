@@ -1,4 +1,4 @@
-from circular_linked_list import CircularLinkedList
+from ..data_structure.circular_linked_list import CircularLinkedList
 
 def loop_detection(cll: CircularLinkedList):
     """

@@ -1,4 +1,4 @@
-from linked_list import LinkedList
+from ..data_structure.linked_list import LinkedList
 
 def partition(ll: LinkedList, x: int):
     """
