@@ -1,7 +1,3 @@
-# 대소문자 구분 X
-# "AaBb" -> False
-
-# 딕셔너리 이용한 방법
 def is_unique_characters(s: str) -> bool:
     """
     Implement an algorithm to determine if a string has all unique characters.

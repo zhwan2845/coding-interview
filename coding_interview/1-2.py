@@ -1,7 +1,3 @@
-# 순열 관계?
-# abcd, bcda -> True
-# abbcd, bcda -> False
-# cdefg, abcde -> False
 def is_permutation(s1: str, s2: str) -> bool:
     """
     Given two strings, write a method to decide if one is a permutation of the
