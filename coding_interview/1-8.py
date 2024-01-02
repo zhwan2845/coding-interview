@@ -20,8 +20,9 @@ def zero_matrix(matrix: List[List[int]]) -> List[List[int]]:
                     new_matrix[i][l] = 0
     return new_matrix
 
+#TODO: until 1/4
 def zero_matrix2(matrix: List[List[int]]) -> List[List[int]]:
-    pass # HW 1/4
+    pass
 
 if __name__ == '__main__':
     # Write your test cases here

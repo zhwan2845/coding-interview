@@ -1,3 +1,4 @@
+#TODO: until 1/4
 def compress(s: str) -> str:
     """
     Implement a method to perform basic string compression using the counts of
