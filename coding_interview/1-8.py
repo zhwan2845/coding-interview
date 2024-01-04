@@ -20,9 +20,29 @@ def zero_matrix(matrix: List[List[int]]) -> List[List[int]]:
                     new_matrix[i][l] = 0
     return new_matrix
 
-#TODO: until 1/4
 def zero_matrix2(matrix: List[List[int]]) -> List[List[int]]:
-    pass
+    col_size = len(matrix[0]) # 열 크기
+    row_size = len(matrix)    # 행 크기
+
+    # 0으로 변경할 행과 열을 저장하는 변수 초기화
+    change_row = []
+    change_col = []
+    for i in range(row_size):
+        for j in range(col_size):
+            if matrix[i][j] == 0:
+                change_row.append(i)
+                change_col.append(j)
+
+    change_row = list(set(change_row))
+    change_col = list(set(change_col))
+    for elem in change_row:
+        for i in range(col_size):
+            matrix[elem][i] = 0
+    for elem in change_col:
+        for i in range(row_size):
+            matrix[i][elem] = 0
+
+    return matrix
 
 if __name__ == '__main__':
     # Write your test cases here
@@ -36,3 +56,4 @@ if __name__ == '__main__':
                [0, 0, 0, 0, 0] ]
 
     assert zero_matrix(matrix) == result
+    assert zero_matrix2(matrix) == result
