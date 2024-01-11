@@ -39,7 +39,6 @@ class LinkedList:
         self.head = self.head.next
         self.num_of_nodes -= 1
 
-
     def delete_last(self):
         # 연결 리스트가 비어있는 경우
         if self.head is None:
@@ -56,6 +55,8 @@ class LinkedList:
         self.num_of_nodes -= 1
 
     def print(self):
+        if self.head == None:
+            return
         cur_node = self.head
         print(f"({self.num_of_nodes}) ")
         while cur_node != None:
@@ -64,7 +65,6 @@ class LinkedList:
         print()
 
 if __name__ == '__main__':
-    # TODO: 1/9까지 linked list의 모든 코드가 실행될 수 있는 테스트 코드 작성하기 (coding-interview-2)
     ll = LinkedList()
     ll.insert_first(3)
     ll.insert_first(1)

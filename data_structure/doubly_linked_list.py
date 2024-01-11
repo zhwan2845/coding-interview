@@ -63,6 +63,8 @@ class DoublyLinkedList:
         self.num_of_nodes -= 1
 
     def display(self):
+        if self.head == None:
+            return
         cur_node = self.head
         while True:
             print(f"{cur_node.data} <-> ", end='')
