@@ -26,51 +26,64 @@ class BinarySearchTree:
 
     def insert(self, value):
         new_node = Node(value)
-        if not self.root:
+        if self.root == None:
             self.root = new_node
         else:
             cur_node = self.root
             while True:
                 if value < cur_node.value:
-                    if cur_node.left is None:
+                    if cur_node.left == None:
                         cur_node.left = new_node
                         break
                     else:
                         cur_node = cur_node.left
-                elif value > cur_node.value:
-                    if cur_node.right is None:
+                else:
+                    if cur_node.right == None:
                         cur_node.right = new_node
                         break
                     else:
                         cur_node = cur_node.right
-                else:
-                    break
+                        break
 
     def delete(self, value):
-        def find_min(node):
-            while node.left:
-                node = node.left
-            return node
+        self.root = self._delete_recursive(self.root, value)
 
-        def _delete(root, key):
-            if not root:
-                return None
-
-            if key < root.value:
-                root.left = _delete(root.left, key)
-            elif key > root.value:
-                root.right = _delete(root.right, key)
-            else:
-                if not root.left:
-                    return root.right
-                elif not root.right:
-                    return root.left
-
-                # 두 자식을 가진 경우, 오른쪽 서브트리에서 최소 값을 찾아서 현재 노드와 교체
-                successor = find_min(root.right)
-                root.value = successor.value
-                root.right = _delete(root.right, successor.value)
-
+    def _delete_recursive(self, root, value):
+        if root is None:
             return root
+        if value < root.value:
+            root.left = self._delete_recursive(root.left, value)
+        elif value > root.value:
+            root.right = self._delete_recursive(root.right, value)
+        else:
+            if root.left == None:
+                return root.right
+            elif root.right == None:
+                return root.left
+            root.value = self._get_min_value(root.right)
+            root.right = self._delete_recursive(root.right, root.value)
+        return root
 
-        self.root = _delete(self.root, value)
+    def _get_min_value(self, root):
+        while root.left is not None:
+            root = root.left
+        return root.data
+
+# 중위순회로 테스트케이스 확인 !!!
+def print_inorder(root):
+    if root != None:
+        print_inorder(root.left)
+        print(f'{root.value}')
+        print_inorder(root.right)
+
+root = Node(1)
+bst = BinarySearchTree(root)
+bst.insert(2)
+bst.insert(7)
+bst.insert(8)
+bst.insert(10)
+print(bst.search(2)) // True
+print(bst.search(5)) // False
+print(bst.search(7)) // True
+print(bst.search(8)) // True
+print(bst.search(15)) // False
