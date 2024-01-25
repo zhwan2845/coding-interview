@@ -58,7 +58,6 @@ class LinkedList:
         if self.head == None:
             return
         cur_node = self.head
-        print(f"({self.num_of_nodes}) ")
         while cur_node != None:
             print(f"{cur_node.data} ->", end=" ")
             cur_node = cur_node.next
