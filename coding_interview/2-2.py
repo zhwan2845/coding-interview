@@ -1,4 +1,6 @@
-from ..data_structure.linked_list import LinkedList
+import sys
+sys.path.append('..')
+from data_structure.linked_list import LinkedList
 
 def nth_to_last(ll: LinkedList, n: int):
     """
@@ -26,11 +28,12 @@ def nth_to_last(ll: LinkedList, n: int):
 if __name__ == '__main__':
     # Write your test cases here
     linked_list = LinkedList()
-    elements = [1, 2, 3, 4, 5, 6, 7, 8, 9]
+    elements = [3, 1, 4, 1, 5, 9, 2, 6, 5, 3, 5] # 객체
+
     for element in elements:
-        linked_list.append(element)
+        linked_list.insert_last(element)
 
     print("\nLinked list:", end=" ")
-    linked_list.display()
+    linked_list.print()
     result = nth_to_last(linked_list, 3)
     print(f"3rd to last element: {result}")

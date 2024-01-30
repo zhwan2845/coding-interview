@@ -27,3 +27,5 @@ if __name__ == '__main__':
 
     delete_duplicates(linked_list)
     linked_list.print()
+
+    assert A == B
