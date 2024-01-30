@@ -12,13 +12,26 @@ class BinarySearchTree:
         return self._search(self.root, value)
     
     def _search(self, node, value) -> Node:
-        pass
+        if node == None:
+            return None
+        if value < node.value:
+            return self._search(node.left, value)
+        elif value > node.value:
+            return self._search(node.right, value)
+        else:
+            return node
 
     def insert(self, value):
         return self._insert(self.root, value)
 
     def _insert(self, node, value) -> Node:
-        pass
+        if node == None:
+            node = Node(value)
+        if value < node.value:
+            node.left =  self._insert(node.left, value)
+        elif value > node.value:
+            node.right =  self._insert(node.right, value)
+        return node
 
     def delete(self, value):
         self.root = self._delete(self.root, value)
@@ -64,6 +77,6 @@ if __name__ == '__main__':
 
     print(bst.search(2)) # False
     print(bst.search(5)) # False
-    print(bst.search(7)) # True
-    print(bst.search(8)) # True
+    print(bst.search(7).value) # True
+    print(bst.search(8).value) # True
     print(bst.search(15)) # False
