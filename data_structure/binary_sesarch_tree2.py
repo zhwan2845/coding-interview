@@ -72,11 +72,12 @@ if __name__ == '__main__':
     bst.insert(7)
     bst.insert(8)
     bst.insert(10)
-    bst.delete(2)
+    bst._delete(bst.root, 2) # 질문
+    bst.delete(7)
     print()
 
     print(bst.search(2)) # False
     print(bst.search(5)) # False
-    print(bst.search(7).value) # True
+    print(bst.search(7)) # True
     print(bst.search(8).value) # True
     print(bst.search(15)) # False
