@@ -24,5 +24,3 @@ if __name__ == '__main__':
     a += "de"
     # a = "abcde"
     print(urlify(testcase, len(testcase)))
-
-# 1/2 hw 
